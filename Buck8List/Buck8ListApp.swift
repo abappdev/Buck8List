@@ -1,0 +1,17 @@
+//
+//  Buck8ListApp.swift
+//  Buck8List
+//
+//  Created by Abhishek Bhalerao on 16/08/25.
+//
+
+import SwiftUI
+
+@main
+struct Buck8ListApp: App {
+    var body: some Scene {
+        WindowGroup {
+            ContentView()
+        }
+    }
+}
