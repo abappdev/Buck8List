@@ -7,14 +7,21 @@
 
 import SwiftData
 import SwiftUI
+import TipKit
 
 struct ContentView: View {
-
+    
     @Environment(\.modelContext) private var modelContext
     @Query private var wishes: [Wish]
-
+    
     @State private var isAlertShowing = false
     @State private var title: String = ""
+    
+    let buttonTip = AppTip()
+    init(){
+        try! Tips.configure()
+    }
+
 
     var body: some View {
         NavigationStack {
@@ -90,8 +97,9 @@ struct ContentView: View {
                             },
                             label: {
                                 Image(systemName: "plus")
+                            
                             }
-                        )
+                        ).popoverTip(buttonTip)
                     }
                 )
 
